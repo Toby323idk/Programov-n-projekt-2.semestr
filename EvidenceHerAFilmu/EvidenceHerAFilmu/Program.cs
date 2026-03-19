@@ -6,20 +6,26 @@ namespace EvidenceHerAFilmu
     {
         static void Main(string[] args)
         {
-            switch (ShowMenu())
-            {
-                case 1:
-                    break;
-                case 2:
-                    break;
-                case 3:
-                    break;
-                case 4:
-                    break;
-                case 5:
-                    break;
-                case 6:
-                    break;
+            while (true) {
+                Console.Clear();
+                switch (ShowMenu())
+                {
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                    case 5:
+                        break;
+                    case 6:
+                        break;
+                    case 0:
+                        return;
+                        
+                }
             }
         }
         static int ShowMenu() // Funkce pro zobrazení Mmenu
