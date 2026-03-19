@@ -9,7 +9,7 @@ namespace EvidenceHerAFilmu
     {
         public List<Film> SeznamFilmu { get; private set; } = new List<Film>();
         public List<Hra> SeznamHer { get; private set; } = new List<Hra>();
-        public void Pridat(Polozka p, int t)
+        public void Pridat(Polozka p, int t) // 1 = hra 0 = film
         {
             if (t == 0)
             {
@@ -26,5 +26,25 @@ namespace EvidenceHerAFilmu
             SeznamFilmu.RemoveAll(f => f.Nazev.Trim().ToLower() == Nazev);
             SeznamHer.RemoveAll(h => h.Nazev.Trim().ToLower() == Nazev);
         }
+        public void VypisVse(bool Typ) // true - hra false - film
+        {
+            if (Typ)
+            {
+                foreach (Hra h in SeznamHer)
+                {
+                    Console.WriteLine("\n");
+                    h.VypisInfo();
+                }
+            }
+            else
+            {
+                foreach (Film f in SeznamFilmu)
+                {
+                    Console.WriteLine("\n");
+                    f.VypisInfo();
+                }
+            }
+        }
     }
 }
+
