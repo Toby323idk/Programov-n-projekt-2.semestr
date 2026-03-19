@@ -32,16 +32,16 @@ namespace EvidenceHerAFilmu
             {
                 foreach (Hra h in SeznamHer)
                 {
-                    Console.WriteLine("\n");
                     h.VypisInfo();
+                    Console.WriteLine("\n");
                 }
             }
             else
             {
                 foreach (Film f in SeznamFilmu)
                 {
-                    Console.WriteLine("\n");
                     f.VypisInfo();
+                    Console.WriteLine("\n");
                 }
             }
         }

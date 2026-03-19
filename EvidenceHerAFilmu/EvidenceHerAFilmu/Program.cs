@@ -13,19 +13,18 @@ namespace EvidenceHerAFilmu
                 switch (ShowMenu())
                 {
                     case 1:
+                        Console.Clear();
                         MujSeznam.VypisVse(true);
                         Console.WriteLine("\n(Pro pokračování stikněte libovolnou klávesu)");
                         Console.ReadKey();
                         break;
                     case 2:
                         Console.Clear();
-
-                        // zapsání názvu hry
                         string nazev;
                         // zapsání názvu hry
                         while (true)
                         {
-                            Console.WriteLine("Zadejte název filmu: ");
+                            Console.WriteLine("Zadejte název hry: ");
                             nazev = Console.ReadLine();
                             if (nazev.Trim().Length > 0)
                             {
@@ -57,7 +56,7 @@ namespace EvidenceHerAFilmu
                         {
                             try
                             {
-                                Console.WriteLine("Zadejte hodnocení od 0.0 až do 10.0");
+                                Console.WriteLine("Zadejte hodnocení od 0.0 až do 10.0 (při zadávání desetinných míst pište čárku)");
                                 hodnoceni = double.Parse(Console.ReadLine());
                                 if(hodnoceni >= 0 && hodnoceni <= 10)
                                 {
@@ -108,6 +107,7 @@ namespace EvidenceHerAFilmu
                         MujSeznam.Pridat(nova, 1);
                         break;
                     case 3:
+                        Console.Clear();
                         MujSeznam.VypisVse(false);
                         Console.WriteLine("\n(Pro pokračování stikněte libovolnou klávesu)");
                         Console.ReadKey();
@@ -115,7 +115,7 @@ namespace EvidenceHerAFilmu
                     case 4:
                         Console.Clear();
                         string nazevf;
-                        // zapsání názvu hry
+                        // zapsání názvu filmu
                         while (true)
                         {
                             Console.WriteLine("Zadejte název filmu: ");
@@ -150,7 +150,7 @@ namespace EvidenceHerAFilmu
                         {
                             try
                             {
-                                Console.WriteLine("Zadejte hodnocení od 0.0 až do 10.0");
+                                Console.WriteLine("Zadejte hodnocení od 0.0 až do 10.0 (při zadávání desetinných míst pište čárku)");
                                 hodnocenif = double.Parse(Console.ReadLine());
                                 if (hodnocenif >= 0 && hodnocenif <= 10)
                                 {
@@ -200,6 +200,7 @@ namespace EvidenceHerAFilmu
                         MujSeznam.Pridat(novyf, 0);
                         break;
                     case 5:
+                        Console.Clear();
                         Console.WriteLine("Zadejte název filmu nebo hry které chcete odebrat (dojde k odebrání všeho se schodným názvem)");
                         string odstranit = Console.ReadLine();
                         MujSeznam.Odebrat(odstranit);
@@ -259,7 +260,7 @@ namespace EvidenceHerAFilmu
                     vyber = -1; // proměnná výběru uživatele se nastaví na neplatnou hodnotu
                 }
                 // kontrola zda je hodnoa výběru zadaná v intervalu <0;6>
-                if (vyber < 7 && vyber > -1)
+                if (vyber < 6 && vyber > -1)
                 {
                     return vyber;
                 }
