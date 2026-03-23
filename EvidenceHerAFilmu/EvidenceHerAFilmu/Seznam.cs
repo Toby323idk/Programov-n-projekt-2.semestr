@@ -45,6 +45,23 @@ namespace EvidenceHerAFilmu
                 }
             }
         }
+        public void UlozeniDoSouboru()
+        {
+            // using slouží ke správnému zavření souboru aby nezůstal otevřený po skončení s prácí
+            using (StreamWriter sw = new StreamWriter("uloziste.txt", false)) // druhý parametr je Append - slouží k tomu jestli připisovat na konec souboru nebo vytvářet nový pokaždé
+            {
+                foreach(Film f in SeznamFilmu)
+                {
+                    string Recenze = f.Recenze.Replace(';', ' '); // kdyby uživatel napsal do recenze středník rozbil by načítání
+                    sw.WriteLine($"Film;{f.Nazev};{f.RokVydani};{f.Hodnoceni};{Recenze};{f.DelkaVMinutach};{f.Reziser}");
+                }
+                foreach(Hra h  in SeznamHer)
+                {
+                    string Recenze = h.Recenze.Replace(';', ' ');
+                    sw.WriteLine($"Hra;{h.Nazev};{h.RokVydani};{h.Hodnoceni};{Recenze};{h.JeMultiplayer};{h.Vydavatel}");
+                }
+            } 
+        }
     }
 }
 

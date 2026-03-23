@@ -7,6 +7,7 @@ namespace EvidenceHerAFilmu
         static void Main(string[] args)
         {
             Seznam MujSeznam = new Seznam();
+            Console.ForegroundColor = ConsoleColor.White;
 
             while (true) {
                 Console.Clear();
@@ -105,6 +106,7 @@ namespace EvidenceHerAFilmu
                         string studio = Console.ReadLine();
                         Hra nova = new Hra(nazev, rok,hodnoceni,recenze,maMultiplayer,studio);
                         MujSeznam.Pridat(nova, 1);
+                        MujSeznam.UlozeniDoSouboru();
                         break;
                     case 3:
                         Console.Clear();
@@ -198,6 +200,7 @@ namespace EvidenceHerAFilmu
                         string reziser = Console.ReadLine();
                         Film novyf = new Film(nazevf, rokf, hodnocenif, recenzef,minuty , reziser);
                         MujSeznam.Pridat(novyf, 0);
+                        MujSeznam.UlozeniDoSouboru();
                         break;
                     case 5:
                         Console.Clear();
@@ -208,6 +211,7 @@ namespace EvidenceHerAFilmu
                         Console.ReadKey();
                         break;
                     case 0:
+                        MujSeznam.UlozeniDoSouboru();
                         return;
                         
                 }
@@ -219,7 +223,7 @@ namespace EvidenceHerAFilmu
             int vyber = -1;
             while (true)
             {
-                Console.ResetColor(); // reset barvy na systémovou výchozí
+                Console.ForegroundColor = ConsoleColor.White; // reset barvy na systémovou výchozí
                 // Vypsání na obrazovku
                 Console.WriteLine("Hry");
                 Console.WriteLine("1.Zobrazit seznam");
