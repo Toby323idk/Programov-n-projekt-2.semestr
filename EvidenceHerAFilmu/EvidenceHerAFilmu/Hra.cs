@@ -16,7 +16,7 @@ namespace EvidenceHerAFilmu
         }
         public override void VypisInfo()
         {
-            Console.WriteLine($"{Nazev} ({RokVydani}) - Hodnocení: {Hodnoceni}/10, Má multiplayer? - {JeMultiplayer}, Vydavatel - {Vydavatel}, Recenze - {Recenze} ");
+            Console.WriteLine($"{Nazev} ({RokVydani}) - Hodnocení: {Hodnoceni}/10, Má multiplayer? - {(JeMultiplayer ? "Ano" : "Ne")}, Vydavatel - {Vydavatel}, Recenze - {Recenze} ");
         }
     }
 }

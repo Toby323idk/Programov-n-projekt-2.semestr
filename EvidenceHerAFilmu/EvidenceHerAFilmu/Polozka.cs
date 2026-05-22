@@ -16,7 +16,7 @@ namespace EvidenceHerAFilmu
         {
             Nazev = nazev;
             RokVydani = rokVydani;
-            Hodnoceni = (double)Math.Round(hodnoceni, 1); // zaokrohlení Hodnocení na jednodesetinné místo
+            Hodnoceni = Math.Round(hodnoceni, 1); // zaokrohlení Hodnocení na jednodesetinné místo
             Recenze = recenze;
         }
 
